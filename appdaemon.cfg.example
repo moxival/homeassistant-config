@@ -1,0 +1,27 @@
+[AppDaemon]
+ha_url = http://localhost:8123
+ha_key = 
+logfile = /var/log/appdeamon.log
+errorfile = /var/log/appdeamon.error.log
+app_dir = /home/homeassistant/.homeassistant/apps
+threads = 10
+latitude =
+longitude =
+elevation =
+time_zone = Europe/Sofia
+
+# Apps
+[hello_world]
+module = hello
+class = HelloWorld
+
+[motion_lights_hallway]
+module = motion_lights_with_state
+class = MotionLightsWithState
+sensor = binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_6_0
+light = light.hallway_lamp
+light_brightness = 255
+delay = input_slider.hallway_motion_timer
+constrain_input_boolean = input_boolean.disable_lights_automation,off
+constrain_start_time = sunset - 00:30:00
+constrain_end_time = sunrise + 00:30:00

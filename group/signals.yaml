@@ -1,0 +1,7 @@
+signal_level:
+  name: Signal Levels
+  entities:
+    - sensor.netatmo_indoor_wifi
+    - sensor.netatmo_master_bedroom_radio
+    - sensor.netatmo_other_radio
+    - sensor.netatmo_rain_radio

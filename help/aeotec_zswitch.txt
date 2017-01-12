@@ -1,0 +1,36 @@
+<Value type="list" genre="config" instance="1" index="80" label="Notification status" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="2" vindex="1" size="1">
+	<Help>Defines the automated status notification of an associated device when status changes</Help>
+	<Item label="Nothing (Default)" value="0" />
+	<Item label="Hail" value="1" />
+	<Item label="Basic" value="2" />
+</Value>
+<Value type="bool" genre="config" instance="1" index="90" label="Enables/disables parameter 91/92" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True">
+	<Help>Enable/disable Wattage threshold and percent.</Help>
+</Value>
+<Value type="short" genre="config" instance="1" index="91" label="Minimum Change to send Report (Watt)" units="watts" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="32000" value="1">
+	<Help>The value represents the minimum change in wattage for a Report to be sent (default 25 W)</Help>
+</Value>
+<Value type="byte" genre="config" instance="1" index="92" label="Minimum Change to send Report (%)" units="%" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="100" value="1">
+	<Help>The value represents the minimum percentage change in wattage for a Report to be sent (Default 5)</Help>
+</Value>
+<Value type="int" genre="config" instance="1" index="101" label="Report type sent in Reporting Group 1" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="15">
+	<Help>Defines the type of report sent for reporting group 1. 2 is multisensor report. 4 is meter report for watts. 8 is meter report for kilowatts. Value 1 (msb) Reserved Value 2 Reserved Value 3 Reserved Value 4 (lsb) bits 7-4 reserved bit 3 KWH bit 2 Watt bit 1 Current bit 0 Voltage</Help>
+</Value>
+<Value type="int" genre="config" instance="1" index="102" label="Report type sent in Reporting Group 2" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+	<Help>Defines the type of report sent for reporting group 1. 2 is multisensor report. 4 is meter report for watts. 8 is meter report for kilowatts. Value 1 (msb) Reserved Value 2 Reserved Value 3 Reserved Value 4 (lsb) bits 7-4 reserved bit 3 KWH bit 2 Watt bit 1 Current bit 0 Voltage</Help>
+</Value>
+<Value type="int" genre="config" instance="1" index="103" label="Report type sent in Reporting Group 3" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0">
+	<Help>Defines the type of report sent for reporting group 1. 2 is multisensor report. 4 is meter report for watts. 8 is meter report for kilowatts. Value 1 (msb) Reserved Value 2 Reserved Value 3 Reserved Value 4 (lsb) bits 7-4 reserved bit 3 KWH bit 2 Watt bit 1 Current bit 0 Voltage</Help>
+</Value>
+<Value type="button" genre="config" instance="1" index="110" label="Set 111 to 113 to default" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" affects="111,112,113">
+	<Help>Set time interval for sending reports for groups 1, 2 and 3 to default.</Help>
+</Value>
+<Value type="int" genre="config" instance="1" index="111" label="Send Interval for Reporting Group 1" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="-1" value="30">
+	<Help>Defines the time interval when the defined report for group 1 is sent.</Help>
+</Value>
+<Value type="int" genre="config" instance="1" index="112" label="Send Interval for Reporting Group 2" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="-1" value="0">
+	<Help>Defines the time interval when the defined report for group 2 is sent.</Help>
+</Value>
+<Value type="int" genre="config" instance="1" index="113" label="Send Interval for Reporting Group 3" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="-1" value="0">
+	<Help>Defines the time interval when the defined report for group 3 is sent.</Help>
+</Value>

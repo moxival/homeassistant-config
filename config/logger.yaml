@@ -1,0 +1,18 @@
+############################################################
+#
+# Logger
+#
+############################################################
+
+# Log Severities: notset, debug, info, warn, warning, error, fatal, critical
+
+#default: debug
+#default: error
+default: error
+
+logs:
+  homeassistant.components.automation: warn
+  homeassistant.components.sensor: warn
+  homeassistant.components.discovery: warn
+  homeassistant.components.script: warn
+  homeassistant.components.zwave: info

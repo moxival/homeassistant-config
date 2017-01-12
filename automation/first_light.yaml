@@ -1,0 +1,62 @@
+#turns it on at 5am
+- alias: Enable First Morning Trigger
+  trigger:
+    - platform: time
+      after: '6:00'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+
+  action:
+    service: homeassistant.turn_on
+    entity_id: input_boolean.trigger_first_morning
+
+# turns it off an hour after sunrise
+#- alias: Disable First Morning Trigger
+#  trigger:
+#    - platform: sun
+#      event: sunrise
+#      offset: "01:00:00"
+#  action:
+#    service: homeassistant.turn_off
+#    entity_id: input_boolean.trigger_first_morning
+
+# This is the main automation. It triggers when my motion sensor is triggered
+# (in this case, a motion sensor from a security system attached to my Vera)
+- alias: First Morning Motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_6_0
+    to: 'on'
+  # only complete the automation if we're still waiting for the first motion
+  condition:
+      condition: state
+      entity_id: input_boolean.trigger_first_morning
+      state: 'on'
+
+  action:
+    # turn off the "waiting" boolean regardless of whether lights will turn on
+    # so that this happens only once
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.trigger_first_morning
+
+    - service: input_boolean.turn_of
+      entity_id: input_boolean.sleeping
+
+    - service: script.turn_on_tv
+      data:
+        source: "VH-1"
+
+    # But only turn on lights if the living room and kitchen lights are off or dimmed
+    # If a condition tests false, the automation will end
+    - condition: sun
+      before: sunrise
+
+    # Trigger a scene
+    # You could add as many services or scenes as you'd like
+    - service: script.kitchen_rainbow_lights

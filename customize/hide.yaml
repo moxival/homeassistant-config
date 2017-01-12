@@ -1,0 +1,38 @@
+## ------------- ##
+## MEDIA PLAYERS ##
+## ------------- ##
+media_player.kd65x9005c:
+  hidden: true
+media_player.bravia_4k_2015:
+  hidden: true
+
+## ------- ##
+## SENSORS ##
+## ------- ##
+sensor.since_last_boot:
+  hidden: true
+
+## ------ ##
+## GROUPS ##
+## ------ ##
+
+
+## ------- ##
+## SCRIPTS ##
+## ------- ##
+script.going_to_bed:
+  hidden: true
+script.going_to_bed_reset:
+  hidden: true
+
+## ------ ##
+## SCENES ##
+## ------ ##
+scene.vacation:
+  hidden: true
+scene.vacation_disable_automation:
+  hidden: true
+scene.vacation_enable_automation:
+  hidden: true
+scene.prepare_comming_home:
+  hidden: true

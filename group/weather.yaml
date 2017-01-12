@@ -1,0 +1,48 @@
+netatmo_living_room:
+  name: Temreature Living Room
+  control: hidden
+  entities:
+    - sensor.netatmo_indoor_temperature
+    - sensor.netatmo_indoor_min_temp
+    - sensor.netatmo_indoor_max_temp
+    - sensor.netatmo_indoor_humidity
+    - sensor.netatmo_indoor_co2
+    - sensor.netatmo_indoor_noise
+    - sensor.netatmo_indoor_pressure
+
+netatmo_master_bedroom:
+  name: Temperature Master Bedroom
+  control: hidden
+  entities:
+    - sensor.netatmo_master_bedroom_temperature
+    - sensor.netatmo_master_bedroom_min_temp
+    - sensor.netatmo_master_bedroom_max_temp
+    - sensor.netatmo_master_bedroom_humidity
+    - sensor.netatmo_master_bedroom_co2
+
+netatmo_fitness:
+  name: Temperature Fitness
+  control: hidden
+  entities:
+    - sensor.netatmo_other_temperature
+    - sensor.netatmo_other_min_temp
+    - sensor.netatmo_other_max_temp
+    - sensor.netatmo_other_humidity
+    - sensor.netatmo_other_co2
+
+netatmo_outdoor:
+  name: Outdoor Weather
+  control: hidden
+  entities:
+    - sensor.netatmo_outdoor_temperature
+    - sensor.netatmo_outdoor_min_temp
+    - sensor.netatmo_outdoor_max_temp
+    - sensor.netatmo_outdoor_humidity
+
+netatmo_rain:
+  name: Rain Meter
+  control: hidden
+  entities:
+    - sensor.netatmo_rain_rain
+    - sensor.netatmo_rain_sum_rain_1
+    - sensor.netatmo_rain_sum_rain_24

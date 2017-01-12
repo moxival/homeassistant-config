@@ -1,0 +1,24 @@
+guest_mode:
+  name: Guest Mode
+  icon: mdi:account-alert
+  initial: off
+
+work_mode:
+  name: Work Mode
+  icon: mdi:briefcase
+  initial: off
+
+vacation_mode:
+  name: Vacation Mode
+  icon: mdi:car
+  initial: off
+
+bedtime:
+  name: Bedtime
+  initial: off
+  icon: mdi:hotel
+
+sleeping:
+  name: Sleeping
+  initial: off
+  icon: mdi:sleep

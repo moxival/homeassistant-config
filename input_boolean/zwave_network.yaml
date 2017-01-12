@@ -1,0 +1,4 @@
+zwave_network:
+  name: Start/Stop Zwave Network
+  icon: mdi:access-point-network
+  initial: on

@@ -1,0 +1,51 @@
+############################################################
+#
+# Send Notification when UPS Load is High
+#
+############################################################
+- alias: NOTIFY when UPS load is more than 70
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ups_load
+    above: 70
+  action:
+    service: notify.notify_all
+    data_template:
+      title: 'UPS Load High'
+      message: >
+        UPS Load: {{ states('sensor.ups_load') }}%
+
+############################################################
+#
+# Send Notification when Electricity Voltage is High
+#
+############################################################
+
+- alias: NOTIFY when Electricity Supply Voltage is HIGH
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.ups_input_voltage
+      above: 253
+  action:
+    service: notify.notify_all
+    data_template:
+      title: 'Electricity Supply Voltage High'
+      message: >
+        Electricity Voltage High: {{ states('sensor.ups_input_voltage') }} Volts
+############################################################
+#
+# Send Notification when Electricity Voltage is Low
+#
+############################################################
+
+- alias: NOTIFY when Electricity Supply Voltage is LOW
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.ups_input_voltage
+      below: 190
+  action:
+    service: notify.notify_all
+    data_template:
+      title: 'Electricity Supply Voltage Low'
+      message: >
+        Electricity Voltage Low: {{ states('sensor.ups_input_voltage') }} Volts

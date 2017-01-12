@@ -1,0 +1,15 @@
+hallway_motion:
+  name: Motion
+  control: hidden
+  entities:
+    - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_6_0
+    - sensor.fibaro_system_fgms001_motion_sensor_temperature_6_1
+    - sensor.fibaro_system_fgms001_motion_sensor_luminance_6_3
+
+pantry_motion:
+  name: Motion
+  control: hidden
+  entities:
+    - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_5_0
+    - sensor.fibaro_system_fgms001_motion_sensor_temperature_5_1
+    - sensor.fibaro_system_fgms001_motion_sensor_luminance_5_3

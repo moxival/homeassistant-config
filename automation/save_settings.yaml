@@ -1,0 +1,75 @@
+##Load Input States from .ini - hass/saved_states
+
+- alias: "Load Input States from Settings.ini"
+
+  trigger:
+    platform: event
+    event_type: homeassistant_start
+
+  action:
+    - delay:
+        minutes: 1
+
+    - service: shell_command.load_input_settings
+
+## Save Input States to .ini - hass/saved_states
+
+- alias: "Save Input States to Settings.ini"
+
+  trigger:
+
+## Input Boolean
+
+    - platform: state
+      entity_id: input_boolean.disable_lights_automation
+    - platform: state
+      entity_id: input_boolean.disable_switch_automation
+    - platform: state
+      entity_id: input_boolean.disable_lights_morning
+    - platform: state
+      entity_id: input_boolean.disable_occupancy_lights
+    - platform: state
+      entity_id: input_boolean.disable_rainy_day
+    - platform: state
+      entity_id: input_boolean.disable_home_away
+    - platform: state
+      entity_id: input_boolean.guest_mode
+    - platform: state
+      entity_id: input_boolean.work_mode
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+    - platform: state
+      entity_id: input_boolean.bedtime
+    - platform: state
+      entity_id: input_boolean.sleeping
+    - platform: state
+      entity_id: input_boolean.zwave_network
+
+## Input Select
+
+#    - platform: state
+#      entity_id: input_select.your_input_select_01
+#
+#    - platform: state
+#      entity_id: input_select.your_input_select_02
+
+## Input Slider
+
+    - platform: state
+      entity_id: input_slider.hallway_motion_timer
+
+## Device Trackers
+
+#    - platform: state
+#      entity_id: device_tracker.your_ios_device
+#
+#    - platform: state
+#      entity_id: device_your_android_device
+
+  action:
+
+    service: shell_command.save_input_settings
+    data_template:
+        section: '{{ trigger.entity_id }}'
+        settings: '{{ trigger.entity_id }}'
+        value: "{{ trigger.to_state.state }}"

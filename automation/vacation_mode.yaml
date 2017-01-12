@@ -1,0 +1,89 @@
+##
+## Activate Vacation Scene on sundown
+- alias: Vacation Mode
+
+  trigger:
+    - platform: state
+      entity_id: sun.sun
+      from: 'above_horizon'
+      to: 'below_horizon'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+
+  action:
+    - service: scene.turn_on
+      entity_id: scene.vacation
+
+##
+## Turn ON TV at 19:30 when on vacation to simulate presence
+## ---------------------------------------------------------
+- alias: Vacation Mode Turn ON TV
+
+  trigger:
+    - platform: time
+      after: '19:00'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+
+  action:
+    - delay: '00:{{ (range(1, 59)|random|int) }}:00'
+    - service: script.turn_on_tv
+      data:
+        source: "Nova"
+
+##
+## Turn off lights and TVcwhen on vacation
+## ---------------------------------------
+- alias: Vacation Mode turn off stuff
+
+  trigger:
+    - platform: time
+      after: '22:00'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+
+  action:
+    - delay: '00:{{ (range(1, 59)|random|int) }}:00'
+    - service: light.turn_off
+      entity_id: group.kitchen_lights
+    - service: media_player.turn_off
+      entity_id: media_player.tv
+
+
+## Disable lights etc automation while vacation mode is ON
+## -------------------------------------------------------
+- alias: Vacation Mode Disable Automation
+
+  trigger:
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+      from: 'off'
+      to: 'on'
+
+  action:
+    - service: scene.turn_on
+      entity_id: scene.vacation_disable_automation
+
+
+## Enable lights etc. automation when vacation is over
+## ---------------------------------------------------
+- alias: Vacation Mode Enable Automation
+
+  trigger:
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+      from: 'on'
+      to: 'off'
+
+  action:
+    - service: scene.turn_on
+      entity_id: scene.vacation_enable_automation

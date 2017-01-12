@@ -1,0 +1,25 @@
+- platform: template
+  sensors:
+    ivan_mobile_battery:
+      friendly_name: Ivan Mobile Battery
+      value_template: "{{ states.device_tracker.ivan_mobile.attributes.battery|default(-1)|int if states.device_tracker.ivan_mobile is not none }}"
+      unit_of_measurement: '%'
+      entity_id: device_tracker.ivan_mobile
+
+    bo_mobile_battery:
+      friendly_name: Bo Mobile Battery
+      value_template: "{{ states.device_tracker.bo_mobile.attributes.battery|default(-1)|int if states.device_tracker.bo_mobile is not none }}"
+      unit_of_measurement: '%'
+      entity_id: device_tracker.bo_mobile
+
+    pantry_motion_battery:
+      friendly_name: Motion in Pantry Battery
+      value_template: "{{ states.sensor.fibaro_system_fgms001_motion_sensor_general_5_0.attributes.battery_level|default(-1)|int if states.sensor.fibaro_system_fgms001_motion_sensor_general_5_0 is not none }}"
+      unit_of_measurement: '%'
+      entity_id: sensor.fibaro_system_fgms001_motion_sensor_general_5_0
+
+    hallway_motion_battery:
+      friendly_name: Motion in Hallway Battery
+      value_template: "{{ states.sensor.fibaro_system_fgms001_motion_sensor_general_6_0.attributes.battery_level|default(-1)|int if states.sensor.fibaro_system_fgms001_motion_sensor_general_6_0 is not none }}"
+      unit_of_measurement: '%'
+      entity_id: sensor.fibaro_system_fgms001_motion_sensor_general_6_0

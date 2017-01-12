@@ -1,0 +1,36 @@
+switch.aeotec_zw096_smart_switch_6_switch_3_0:
+  friendly_name: Under TV Switch
+sensor.aeotec_zw096_smart_switch_6_current_3_20:
+  friendly_name: Under TV Switch (A)
+sensor.aeotec_zw096_smart_switch_6_energy_3_0:
+  friendly_name: Under TV Switch (KW)
+sensor.aeotec_zw096_smart_switch_6_power_3_8:
+  friendly_name: Under TV Switch (W)
+sensor.aeotec_zw096_smart_switch_6_voltage_3_16:
+  friendly_name: Under TV Switch (V)
+sensor.aeotec_zw096_smart_switch_6_previous_reading_3_1:
+  hidden: true
+
+switch.aeotec_zw096_smart_switch_6_switch_2_0:
+  friendly_name: Servers Switch
+sensor.aeotec_zw096_smart_switch_6_current_2_20:
+  friendly_name: Servers Switch (A)
+sensor.aeotec_zw096_smart_switch_6_energy_2_0:
+  friendly_name: Servers Switch (KW)
+sensor.aeotec_zw096_smart_switch_6_power_2_8:
+  friendly_name: Servers Switch (W)
+sensor.aeotec_zw096_smart_switch_6_voltage_2_16:
+  friendly_name: Servers Switch (V)
+sensor.aeotec_zw096_smart_switch_6_previous_reading_2_1:
+  hidden: true
+
+switch.fibaro_system_fgwpe_wall_plug_switch_4_0:
+  friendly_name: Hallway Switch
+sensor.fibaro_system_fgwpe_wall_plug_exporting_4_32:
+  hidden: true
+sensor.fibaro_system_fgwpe_wall_plug_power_4_4:
+  friendly_name: Hallway Switch Power
+sensor.fibaro_system_fgwpe_wall_plug_power_4_8:
+  hidden: true
+sensor.fibaro_system_fgwpe_wall_plug_energy_4_0:
+  friendly_name: Hallway Switch Power KW

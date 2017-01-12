@@ -1,0 +1,10 @@
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+
+- platform: command_line
+  name: cpu_temperature
+  command: cat /sys/class/thermal/thermal_zone0/temp
+  unit_of_measurement: '°C'
+  value_template: '{{ (value|int / 1000)|round(1) }}'

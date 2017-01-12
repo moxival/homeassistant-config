@@ -1,0 +1,33 @@
+## Turn on lamp in hallway
+## -----------------------
+- alias: 'Turn on lights in hallway on sunset'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:15:00'
+
+  condition:
+    condition: state
+    entity_id: input_boolean.disable_lights_automation
+    state: 'off'
+
+  action:
+    service: light.turn_on
+    entity_id: light.hallway_lamp
+
+## Turn OFF lamp in hallway
+## ------------------------
+- alias: 'Turn off lights in hallway on sunrise'
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: '+00:30:00'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.disable_lights_automation
+      state: 'off'
+
+  action:
+    service: light.turn_off
+    entity_id: light.hallway_lamp

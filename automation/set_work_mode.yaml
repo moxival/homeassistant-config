@@ -1,0 +1,50 @@
+## -------------------------------------------- ##
+#  Every friday and saturday turn OFF work mode  #
+## -------------------------------------------- ##
+- alias: 'Turn off work mode'
+  trigger:
+    platform: time
+    after: '19:30'
+  condition:
+    - condition: state
+      entity_id: input_boolean.work_mode
+      state: 'on'
+    - condition: time
+      weekday:
+        - fri
+        - sat
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.work_mode
+    - service: notify.notify_ivan
+      data:
+        message: 'Now work for you tomorrow!!!'
+
+## -------------------- ##
+#  Turn ON workday mode  #
+## -------------------- ##
+- alias: 'Turn on work mode'
+  trigger:
+    platform: time
+    after: '19:30'
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.work_mode
+      state: 'off'
+    - condition: time
+      weekday:
+        - sun
+        - mon
+        - tue
+        - wed
+        - thu
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.work_mode
+    - service: notify.notify_ivan
+      data:
+        message: 'Tomorrow is a work day :)!'
+

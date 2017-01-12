@@ -1,0 +1,42 @@
+- platform: netatmo
+  station: Starling
+  modules:
+    Indoor:
+      - temperature
+      - co2
+      - pressure
+      - noise
+      - humidity
+      - min_temp
+      - max_temp
+      - wifi_status
+    Outdoor:
+      - temperature
+      - humidity
+      - min_temp
+      - max_temp
+      - battery_vp
+    Other:
+      - temperature
+      - co2
+      - humidity
+      - min_temp
+      - max_temp
+      - rf_status
+      - battery_vp
+    Master Bedroom:
+      - temperature
+      - co2
+      - humidity
+      - min_temp
+      - max_temp
+      - rf_status
+      - battery_vp
+    Rain:
+      - rain
+      - sum_rain_1
+      - sum_rain_24
+      - battery_vp
+      - rf_status
+
+- platform: yr

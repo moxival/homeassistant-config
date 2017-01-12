@@ -1,0 +1,18 @@
+sensor.cpu_temperature:
+  friendly_name: CPU Temperature
+
+sensor.speedtest_download:
+  icon: mdi:download
+
+sensor.speedtest_upload:
+  icon: mdi:upload
+
+sensor.ivan_mobile_battery:
+  icon: mdi:cellphone
+
+sensor.bo_mobile_battery:
+  icon: mdi:cellphone
+
+group.ups:
+  friendly_name: Battery Backup
+  icon: mdi:car-battery

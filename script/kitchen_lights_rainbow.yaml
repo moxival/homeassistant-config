@@ -1,0 +1,54 @@
+kitchen_rainbow_lights:
+  alias: Rainbow Lights
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.bulb_4
+        rgb_color: [255, 0, 0]
+        brightness: 255
+        transition: 2
+    - delay: "0:00:01"
+    - service: light.turn_on
+      data:
+        entity_id: light.bulb_5
+        rgb_color: [255,197,0]
+        brightness: 255
+        transition: 2
+    - delay: "0:00:01"
+    - service: light.turn_on
+      data:
+        entity_id: light.bulb_6
+        rgb_color: [0, 255, 0]
+        brightness: 255
+        transition: 2
+    - delay: "0:00:01"
+    - service: light.turn_on
+      data:
+        entity_id: light.bulb_1
+        rgb_color: [255,0,221]
+        brightness: 255
+        transition: 2
+    - delay: "0:00:01"
+    - service: light.turn_on
+      data:
+        entity_id: light.bulb_2
+        rgb_color: [255,0,221]
+        brightness: 255
+        transition: 2
+    - delay: "0:00:01"
+    - service: light.turn_on
+      data:
+        entity_id: light.bulb_3
+        rgb_color: [0,51,255]
+        brightness: 255
+        transition: 2
+
+    - delay: "0:00:20"
+
+    - service: light.turn_on
+      data:
+        entity_id: group.kitchen_lights
+        rgb_color: [179, 179, 179]
+        brightness: 179
+        color_temp: 340
+        transition: 5

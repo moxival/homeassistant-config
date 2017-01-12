@@ -1,0 +1,78 @@
+default_view:
+  icon: mdi:home
+  view: true
+  entities:
+    - group.living_room_lights_home
+    - group.kitchen_lights_home
+    - group.hallway_lights_home
+    - group.house_modes
+    - device_tracker.ivan_mobile
+    - device_tracker.bo_mobile
+    - sensor.netatmo_indoor_temperature
+    - sensor.netatmo_outdoor_temperature
+
+living_room_view:
+  name: Living Room
+  view: true
+  entities:
+    - group.living_room_lights
+    - group.under_tv_switch
+    - group.netatmo_living_room
+    - media_player.living_room
+    - media_player.tv
+
+kitchen_view:
+  name: Kitchen
+  view: true
+  entities:
+    - group.kitchen_lights
+
+hallway_view:
+  name: Hallway
+  view: true
+  entities:
+    - group.hallway_switch
+    - group.hallway_motion
+    - group.hallway_lights
+
+master_bedroom_view:
+  name: Master Bedroom
+  view: true
+  entities:
+    - group.netatmo_master_bedroom
+
+fitness_view:
+  name: Fitness
+  view: true
+  entities:
+    - media_player.fitness
+    - group.netatmo_fitness
+
+outdoor_view:
+  name: Outdoor
+  view: true
+  entities:
+    - group.netatmo_outdoor
+    - group.netatmo_rain
+
+pantry_view:
+  name: Pantry
+  view: true
+  entities:
+    - group.pantry_server_switch
+    - group.pantry_motion
+    - group.media_center
+    - group.ups
+
+system_view:
+  name: System
+  view: true
+  entities:
+    - group.network
+    - group.automation_override
+    - group.house_modes
+    - group.system_scripts
+    - group.system
+    - group.batteries
+    - group.signal_level
+    - group.system_settings

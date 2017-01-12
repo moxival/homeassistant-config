@@ -1,0 +1,23 @@
+home:
+  ignored_zones:
+    - work
+    - suvorovo
+  devices:
+    - device_tracker.ivan_mobile
+    - device_tracker.bo_mobile
+  tolerance: 50
+  unit_of_measurement: km
+work:
+  ignored_zones:
+    - suvorovo
+  devices:
+    - device_tracker.ivan_mobile
+    - device_tracker.bo_mobile
+  tolerance: 100
+  unit_of_measurement: km
+suvorovo:
+  devices:
+    - device_tracker.ivan_mobile
+    - device_tracker.bo_mobile
+  tolerance: 500
+  unit_of_measurement: km

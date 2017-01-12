@@ -1,0 +1,42 @@
+##
+- name: Vacation
+  entities:
+      group.kitchen_lights:
+          state: on
+          rgb_color: [127, 127, 127]
+          brightness: 127
+      group.hallway_lights:
+          state: on
+
+#- name: Vacation Step 1
+
+
+## Scene that will disable almost all automations
+## ----------------------------------------------
+- name: Vacation Disable Automation
+  entities:
+      input_boolean.disable_lights_automation:
+          state: on
+      input_boolean.disable_switch_automation:
+          state: on
+      input_boolean.disable_lights_morning:
+          state: on
+      input_boolean.disable_occupancy_lights:
+          state: on
+      input_boolean.disable_rainy_day:
+          state: on
+
+## Scene that will enable all disabled automation
+## ----------------------------------------------
+- name: Vacation Enable Automation
+  entities:
+      input_boolean.disable_lights_automation:
+          state: off
+      input_boolean.disable_switch_automation:
+          state: off
+      input_boolean.disable_lights_morning:
+          state: off
+      input_boolean.disable_occupancy_lights:
+          state: off
+      input_boolean.disable_rainy_day:
+          state: off

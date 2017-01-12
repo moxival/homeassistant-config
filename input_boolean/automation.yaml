@@ -1,0 +1,34 @@
+# Disable all lights automation switch
+disable_lights_automation:
+  name: Disable lights automation
+  icon: mdi:lightbulb-outline
+  initial: off
+
+# Disable all automation of switches
+disable_switch_automation:
+  name: Disable switches automation
+  initial: off
+
+# Disable automation for lights in the morning
+disable_lights_morning:
+  name: Disable Lights On in the Morning
+  initial: off
+  icon: mdi:theme-light-dark
+
+# Disable automation of lights based on motion
+disable_occupancy_lights:
+  name: Disable Lights Off in Unoccupied Rooms
+  initial: off
+  icon: mdi:eye-off
+
+# Disable automation for lights in rainy days
+disable_rainy_day:
+  name: Disable Rainy Day Lighting
+  initial: off
+  icon: mdi:water-off
+
+# Disable automations for when away
+disable_home_away:
+  name: Disable Away Mode Automation
+  initial: off
+  icon: mdi:map-marker-off

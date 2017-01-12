@@ -1,0 +1,12 @@
+Network:
+  entities:
+    - sensor.external_ip
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+
+Media Center:
+  entities:
+    - sensor.sonarr_disk_space
+    - sensor.sonarr_upcoming
+    - sensor.sonarr_wanted

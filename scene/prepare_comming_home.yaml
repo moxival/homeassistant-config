@@ -1,0 +1,10 @@
+
+# Turn the lights in the kitchen on 70% brightness
+- name: Prepare comming home
+  entities:
+    group.kitchen_lights:
+      state: on
+      transition: 5
+      rgb_color: [127, 127, 127]
+      brightness: 127
+      color_temp: 191

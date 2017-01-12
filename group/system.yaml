@@ -1,0 +1,36 @@
+################################################################
+## Group / System
+################################################################
+
+system:
+  entities:
+    - sensor.date
+    - sensor.time
+    - sensor.since_last_boot_templated
+    - sensor.cpu_temperature
+    - updater.updater
+
+system_scripts:
+  name: System Scripts
+  control: hidden
+  entities:
+#    - script.backup_config
+    - script.reload_config
+    - script.reload_groups
+    - script.restart_ha
+    - input_boolean.zwave_network
+
+automation_override:
+  name: Disable all automation
+  entities:
+    - input_boolean.disable_lights_automation
+    - input_boolean.disable_switch_automation
+    - input_boolean.disable_lights_morning
+    - input_boolean.disable_occupancy_lights
+    - input_boolean.disable_rainy_day
+    - input_boolean.disable_home_away
+
+system_settings:
+  name: Settings and Timers
+  entities:
+    - input_slider.hallway_motion_timer

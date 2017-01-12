@@ -1,0 +1,20 @@
+- name: pushbullet
+  platform: pushbullet
+  api_key: !secret pushbullet_key
+
+- platform: group
+  name: iv_push
+  services:
+    - service: pushbullet
+      data:
+        target: !secret iv_pushbullet
+
+- platform: group
+  name: notify_ivan
+  services:
+    - service: iv_push
+
+- platform: group
+  name: notify_all
+  services:
+    - service: notify_ivan

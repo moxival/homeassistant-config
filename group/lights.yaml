@@ -1,0 +1,39 @@
+kitchen_lights:
+  name: Kitchen lights
+  entities:
+    - light.bulb_1
+    - light.bulb_2
+    - light.bulb_3
+    - light.bulb_4
+    - light.bulb_5
+    - light.bulb_6
+
+kitchen_lights_home:
+  name: Kitchen lights
+  entities:
+    - light.bulb_1
+    - light.bulb_2
+    - light.bulb_3
+    - light.bulb_4
+    - light.bulb_5
+    - light.bulb_6
+
+hallway_lights:
+  name: Hallway Lights
+  entities:
+    - light.hallway_lamp
+
+hallway_lights_home:
+  name: Hallway Lights
+  entities:
+    - light.hallway_lamp
+
+living_room_lights:
+  name: Living Room Lights
+  entities:
+    - light.corner_lamp
+
+living_room_lights_home:
+  name: Living Room Lights
+  entities:
+    - light.corner_lamp

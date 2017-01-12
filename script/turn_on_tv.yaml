@@ -1,0 +1,13 @@
+turn_on_tv:
+  sequence:
+    - condition: state
+      entity_id: media_player.tv
+      state: 'off'
+    - service: media_player.turn_on
+      data:
+        entity_id: media_player.tv
+    - delay: 00:00:05
+    - service: media_player.select_source
+      data_template:
+        entity_id: media_player.tv
+        source: "{{ source }}"

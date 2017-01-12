@@ -1,0 +1,49 @@
+- alias: 'Prepare for comming home'
+  trigger:
+    platform: numeric_state
+    entity_id: proximity.home
+    # Trigger when becoming 1-5 km away
+    below: 5
+    above: 1
+  condition:
+    condition: and
+    conditions:
+      - condition: or
+        conditions:
+          # Automation enabled OR Vacation is on (and as a result all automations are disabled)
+          - condition: state
+            entity_id: input_boolean.disable_lights_automation
+            state: 'off'
+          # ------
+          - condition: state
+            entity_id: input_boolean.vacation_mode
+            state: 'on'
+
+      # We don't have guests
+      - condition: state
+        entity_id: input_boolean.guest_mode
+        state: 'off'
+
+      # Heading home
+      - condition: template
+        value_template: '{{ states.proximity.home.attributes.dir_of_travel == "towards" }}'
+
+      # light are off
+      - condition: state
+        entity_id: group.kitchen_lights
+        state: 'off'
+
+      # Nobody home
+      - condition: state
+        entity_id: group.all_devices
+        state: 'not_home'
+  action:
+    - service: script.turn_on_tv
+      data:
+        source: 'VH-1'
+    # After sunset
+    - condition: sun
+      after: sunset
+
+    - service: scene.turn_on
+      entity_id: scene.prepare_comming_home

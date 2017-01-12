@@ -1,0 +1,12 @@
+batteries:
+  name: Battery levels
+  entities:
+    - sensor.ivan_mobile_battery
+    - sensor.bo_mobile_battery
+    - sensor.hallway_motion_battery
+    - sensor.pantry_motion_battery
+    - sensor.netatmo_other_battery
+    - sensor.netatmo_master_bedroom_battery
+    - sensor.netatmo_outdoor_battery
+    - sensor.netatmo_rain_battery
+    - sensor.ups_battery

@@ -1,0 +1,28 @@
+under_tv_switch:
+  name: Under TV Plug
+  entities:
+    - switch.aeotec_zw096_smart_switch_6_switch_3_0
+    - sensor.aeotec_zw096_smart_switch_6_current_3_20
+    - sensor.aeotec_zw096_smart_switch_6_power_3_8
+    - sensor.aeotec_zw096_smart_switch_6_energy_3_0
+    - sensor.aeotec_zw096_smart_switch_6_voltage_3_16
+
+pantry_server_switch:
+  name: Server Plug
+  control: hidden
+  entities:
+    - switch.aeotec_zw096_smart_switch_6_switch_2_0
+    - sensor.aeotec_zw096_smart_switch_6_current_2_20
+    - sensor.aeotec_zw096_smart_switch_6_power_2_8
+    - sensor.aeotec_zw096_smart_switch_6_energy_2_0
+    - sensor.aeotec_zw096_smart_switch_6_voltage_2_16
+
+hallway_switch:
+  name: Hallway Plug
+  entities:
+    - switch.fibaro_system_fgwpe_wall_plug_switch_4_0
+    - sensor.fibaro_system_fgwpe_wall_plug_power_4_4
+    - sensor.fibaro_system_fgwpe_wall_plug_energy_4_0
+#    - switch.fibaro_switch_switch_4_0
+#    - sensor.fibaro_switch_power_4_4
+#    - sensor.fibaro_switch_energy_4_0

@@ -1,0 +1,8 @@
+- platform: sonarr
+  api_key: !secret sonar_key
+  host: !secret miley_ip
+  port: !secret sonar_port
+  monitored_conditions:
+    - wanted
+    - upcoming
+    - diskspace

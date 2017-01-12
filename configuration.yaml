@@ -1,0 +1,111 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: 179
+  unit_system: metric
+  time_zone: Europe/Sofia
+  customize: !include_dir_merge_named customize
+
+# Enables the frontend
+frontend:
+
+panel_iframe:
+  router:
+    title: 'Router'
+    icon: 'mdi:router-wireless'
+    url: !secret router_url
+
+http:
+  trusted_networks: 127.0.0.1
+  api_password: !secret http_pwd
+  ip_ban_enabled: true
+  login_attempts_threshold: 3
+  base_url: !secret base_url
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+recorder:
+  db_url: !secret db_string
+  purge_days: 5
+
+# Track the sun
+sun:
+
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret email
+  password: !secret netatmo_password
+
+# Text to speech
+tts:
+  platform: google
+
+
+mqtt:
+  broker: m20.cloudmqtt.com
+  port: 25827
+  username: !secret cloudmqt_user
+  password: !secret cloudmqt_password
+#  broker: 127.0.0.1
+#  port: 1883
+#  client_id: home-assistant-1
+#  username: pi
+#  password: raspberry
+
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 250
+
+light:
+  - platform: lifx
+    broadcast: 192.168.1.255
+
+zwave:
+  usb_path: /dev/ttyACM0
+  polling_interval: 30000
+
+media_player:
+  - platform: cast
+  - platform: plex
+  - platform: braviatv
+    host: !secret bravia_ip
+    name: TV
+
+apcupsd:
+  host: !secret apcupsd_ip
+
+############################################################
+#
+# Includes
+#
+############################################################
+
+# Single files
+history: !include config/history.yaml
+logbook: !include config/logbook.yaml
+proximity: !include config/proximity.yaml
+logger: !include config/logger.yaml
+notify: !include config/notify.yaml
+input_slider: !include config/input_slider.yaml
+
+# Merge list
+automation: !include_dir_merge_list automation
+zone: !include_dir_list zones
+sensor: !include_dir_merge_list sensor
+scene: !include_dir_merge_list scene
+
+# Merge named
+group: !include_dir_merge_named group
+shell_command: !include_dir_merge_named shell_scripts
+input_boolean: !include_dir_merge_named input_boolean
+
+script: !include_dir_merge_named script

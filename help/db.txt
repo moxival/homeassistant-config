@@ -1,0 +1,57 @@
+moodified from post by @kenshin for installing mysql to install for mariadb.
+
+$sudo apt-get update && sudo apt-get upgrade
+
+$sudo reboot
+
+$sudo apt instkenshinall mariadb-server  #enter password for root of the sql server. this can be a different password than your system password
+
+$sudo apt-get install libmysqlclient-dev
+
+$sudo apt-get install python-dev python3-dev #these was already installed on my system.
+
+
+
+$mysql -uroot -p
+
+$CREATE DATABASE ha;
+
+$CREATE USER 'hauser'@'localhost' IDENTIFIED BY 'password';
+
+$GRANT ALL PRIVILEGES ON ha.* TO 'hauser'@'localhost';
+
+$FLUSH PRIVILEGES;
+
+
+
+
+
+I am runnin HASSbian so my commands are customzed
+
+
+
+$ sudo systemctl stop home-assistant@homeassistant.service
+
+$ sudo su -s /bin/bash homeassistant
+
+$ source /srv/homeassistant/bin/activate
+
+$ pip3 install --upgrade mysqlclient
+
+
+
+
+
+Add to configuration.yaml
+
+
+
+recorder:
+
+  db_url: !secret db_string
+
+  purge_days: 2
+
+
+
+Thanks @Danielhiversen for the DB string in a secret.

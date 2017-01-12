@@ -1,0 +1,115 @@
+## Turn on vacation if nobody was at home for 24 hours
+## ---------------------------------------------------
+- alias: Turn on Vacation Mode when Gone 24 Hours
+  trigger:
+    - platform: state
+      entity_id: group.family
+      from: 'home'
+      to: 'not_home'
+      for:
+        hours: 24
+        minutes: 0
+        seconds: 0
+  condition:
+    - condition: state
+      entity_id: input_boolean.disable_home_away
+      state: 'off'
+
+    # We don't have guests
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+
+    # Vacation mode is not already on
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'off'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.vacation_mode
+    - service: notify.notify_ivan
+      data:
+        message: 'Vacation mode activated'
+
+## Turn on vacation mode if we are or going to Suvorovo
+## ----------------------------------------------------
+- alias: Turn on Vacation Mode when at Suvorovo
+  trigger:
+    - platform: numeric_state
+      entity_id: proximity.suvorovo
+      # Trigger when becoming 1-5 km away
+      below: 5
+  condition:
+    # Automation is enabled
+    - condition: state
+      entity_id: input_boolean.disable_home_away
+      state: 'off'
+
+    # We don't have guests
+    - condition: state
+      entity_id: input_boolean.guest_mode
+      state: 'off'
+
+    # Vacation mode is not already on
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'off'
+
+    # Heading or arrived in suvorovo
+    - condition: template
+      value_template: '{{ states.proximity.suvorovo.attributes.dir_of_travel == "towards" or states.proximity.suvorovo.attributes.dir_of_travel == "arrived" }}'
+
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.vacation_mode
+    - service: notify.notify_ivan
+      data:
+        message: 'Vacation mode activated'
+
+## Turn off Vacation mode when home
+## --------------------------------
+- alias: Turn off Vacation Mode when Home
+
+  trigger:
+    - platform: state
+      entity_id: group.family
+      from: 'not_home'
+      to: 'home'
+
+  condition:
+    - condition: state
+      entity_id: input_boolean.disable_home_away
+      state: 'off'
+
+     # Vacation mode is not already on
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+
+  action:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.vacation_mode
+    - service: notify.notify_ivan
+      data:
+        message: 'Vacation mode de-activated'
+
+## Turn off vacation if on and disable away mode was activated
+## -----------------------------------------------------------
+- alias: Turn off vacation on switch
+  trigger:
+    - platform: state
+      entity_id: input_boolean.disable_home_away
+      state: 'on'
+
+  condition:
+    # Automation is enabled
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+
+  action:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.vacation_mode
+    - service: notify.notify_ivan
+      data:
+        message: 'Vacation mode de-activated'

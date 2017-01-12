@@ -1,0 +1,12 @@
+Family:
+  entities:
+    - group.ivan
+    - group.bo
+
+Ivan:
+  entities:
+    - device_tracker.ivan_mobile
+
+Bo:
+  entities:
+    - device_tracker.bo_mobile

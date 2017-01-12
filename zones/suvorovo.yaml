@@ -1,0 +1,5 @@
+name: Suvorovo
+latitude: !secret cs_latitude
+longitude: !secret cs_longitude
+radius: 250
+icon: mdi:work
