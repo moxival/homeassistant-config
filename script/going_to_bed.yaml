@@ -1,11 +1,6 @@
-#going_to_bed_reset:
-#  sequence:
-#    - delay:
-#        seconds: 5
-#    - service: input_boolean.turn_off
-#      entity_id: input_boolean.bedtime
 
 going_to_bed:
+  alias: Going to bed
   sequence:
     - service: light.turn_off
       data:
@@ -25,5 +20,6 @@ going_to_bed:
 
     - delay:
         seconds: 5
+
     - service: input_boolean.turn_off
       entity_id: input_boolean.bedtime

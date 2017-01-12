@@ -5,6 +5,8 @@ exclude:
     - updater
     - group
     - discovery
+    - zone
+    - proximity
   entities:
     - sensor.since_last_boot
     - sensor.since_last_boot_templated

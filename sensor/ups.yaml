@@ -3,7 +3,7 @@
 #    - hostname
 #    - upsname
     - starttime
-    - model
+#    - model
     - status
     - linev
     - loadpct
@@ -13,19 +13,19 @@
     - mintimel
     - maxtime
     - sense
-    - lotrans
-    - hitrans
+#    - lotrans
+#    - hitrans
 #    - alarmdel
-    - battv
+#    - battv
     - lastxfer
     - numxfers
     - tonbatt
     - cumonbatt
     - xoffbatt
 #    - selftest
-    - statflag
-    - serialno
-    - battdate
+#    - statflag
+#    - serialno
+#    - battdate
 #    - nominv
 #    - nombattv
 #    - firmware

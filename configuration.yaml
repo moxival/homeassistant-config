@@ -10,12 +10,6 @@ homeassistant:
 # Enables the frontend
 frontend:
 
-panel_iframe:
-  router:
-    title: 'Router'
-    icon: 'mdi:router-wireless'
-    url: !secret router_url
-
 http:
   trusted_networks: 127.0.0.1
   api_password: !secret http_pwd

@@ -1,17 +1,17 @@
 sensor.fibaro_system_fgms001_motion_sensor_temperature_6_1:
-  friendly_name: Temperature
+  friendly_name: Hallway Temperature
 sensor.fibaro_system_fgms001_motion_sensor_luminance_6_3:
-  friendly_name: LUX
+  friendly_name: Hallway LUX
 sensor.fibaro_system_fgms001_motion_sensor_general_6_0:
   hidden: true
 binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_6_0:
-  friendly_name: Motion
+  friendly_name: Hallway Motion
 
 sensor.fibaro_system_fgms001_motion_sensor_temperature_5_1:
-  friendly_name: Temperature
+  friendly_name: Pantry Temperature
 sensor.fibaro_system_fgms001_motion_sensor_luminance_5_3:
-  friendly_name: LUX
+  friendly_name: Hallway LUX
 sensor.fibaro_system_fgms001_motion_sensor_general_5_0:
   hidden: true
 binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_5_0:
-  friendly_name: Motion
+  friendly_name: Hallway Motion

@@ -1,0 +1,21 @@
+## ----------
+## Common kitchen lighting scene - 65% brightness / White 3200K
+## ----------
+- name: Kitchen Common
+  entities:
+    group.kitchen_lights:
+      state: on
+      transition: 5
+      rgb_color: [165, 165, 165]
+      brightness: 165
+      color_temp: 191
+
+# Turn the lights in the kitchen on 50% brightness
+- name: Comming home
+  entities:
+    group.kitchen_lights:
+      state: on
+      transition: 5
+      rgb_color: [127, 127, 127]
+      brightness: 127
+      color_temp: 191

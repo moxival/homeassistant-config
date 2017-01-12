@@ -94,3 +94,4 @@ secrets.yaml
 known_devices.yaml
 bravia.conf
 plex.conf
+html5_push_registrations.conf

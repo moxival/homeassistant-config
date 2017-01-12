@@ -17,14 +17,14 @@
     entity_id: input_boolean.trigger_first_morning
 
 # turns it off an hour after sunrise
-#- alias: Disable First Morning Trigger
-#  trigger:
-#    - platform: sun
-#      event: sunrise
-#      offset: "01:00:00"
-#  action:
-#    service: homeassistant.turn_off
-#    entity_id: input_boolean.trigger_first_morning
+- alias: Disable First Morning Trigger
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: "01:00:00"
+  action:
+    service: homeassistant.turn_off
+    entity_id: input_boolean.trigger_first_morning
 
 # This is the main automation. It triggers when my motion sensor is triggered
 # (in this case, a motion sensor from a security system attached to my Vera)
@@ -45,7 +45,7 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.trigger_first_morning
 
-    - service: input_boolean.turn_of
+    - service: input_boolean.turn_off
       entity_id: input_boolean.sleeping
 
     - service: script.turn_on_tv

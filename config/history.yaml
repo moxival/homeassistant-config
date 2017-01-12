@@ -6,6 +6,13 @@ exclude:
     - group
     - discovery
     - input_boolean
+    - script
+    - scene
+    - zone
+    - proximity
+    - discovery
+    - shell_command
+    - input_slider
   entities:
     - sensor.since_last_boot
     - sensor.since_last_boot_templated
@@ -20,3 +27,16 @@ exclude:
     - sensor.netatmo_outdoor_battery
     - sensor.netatmo_rain_battery
     - sensor.netatmo_rain_radio
+    - sensor.yr_symbol
+    - sensor.ups_transfer_to_battery
+    - sensor.ups_transfer_from_battery
+    - sensor.ups_shutdown_time
+    - sensor.ups_sensitivity
+    - sensor.netatmo_indoor_min_temp
+    - sensor.netatmo_indoor_max_temp
+    - sensor.netatmo_other_min_temp
+    - sensor.netatmo_other_max_temp
+    - sensor.netatmo_master_bedroom_min_temp
+    - sensor.netatmo_master_bedroom_max_temp
+    - sensor.netatmo_outdoor_min_temp
+    - sensor.netatmo_outdoor_max_temp

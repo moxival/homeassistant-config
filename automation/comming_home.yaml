@@ -2,8 +2,7 @@
   trigger:
     platform: numeric_state
     entity_id: proximity.home
-    # Trigger when becoming 1-5 km away
-    below: 5
+    below: 6
     above: 1
   condition:
     condition: and
@@ -46,4 +45,4 @@
       after: sunset
 
     - service: scene.turn_on
-      entity_id: scene.prepare_comming_home
+      entity_id: scene.comming_home
